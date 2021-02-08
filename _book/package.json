@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "gitbook-plugin-bibtex-cite": "^1.1.0",
+    "gitbook-plugin-mathjax": "git+https://github.com/algorithm-archivists/plugin-mathjax.git",
+    "gitbook-plugin-wordcount": "^0.0.1",
+    "honkit": "^3.6.16"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "honkit build",
+    "serve": "honkit serve"
+  }
+}
