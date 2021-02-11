@@ -5,8 +5,6 @@ Eventually, all videos will be incorporated into this project, but for now we ha
 
 Please let us know how you feel about this type of content!
 
-We will hopefully be allowing community contributions in the near future, but are still deciding the best way to do this.
-
 **Notes and features:**
 1. There should be a "Print" and "Blog" mode for each post, where the blog mode may have short video clips interspersed, or potentially other bits of interactivity in the future, while print mode is meant to be printed and read offline (potentially). To switch between these modes, click on the "PRINT" or "BLOG" button at the top left of the toolbar.
 2. All images are licensed under [Creative Commons Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode). This means that all the content can be used in any project for non-commercial purposes as long as there is attribution to Grant Sanderson and there are no changes to the license of derivative work.
