@@ -1,1 +1,3 @@
 *.bak
+_book/*
+node_modules/*

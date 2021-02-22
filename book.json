@@ -3,7 +3,21 @@
   "root": "./",
   "plugins": [
     "mathjax@https://github.com/algorithm-archivists/plugin-mathjax",
+    "api-language-selector@https://github.com/algorithm-archivists/gitbook-plugin-api-language-selector.git",
     "bibtex-cite",
+    "toggle-summary",
     "wordcount"
-  ]
+  ],
+  "pluginsConfig": {
+    "api-language-selector": {
+      "languages": [
+        {
+          "lang": "1",
+          "name": "1",
+          "default": true
+        }
+      ]
+    }
+  }
 }
+

@@ -6,6 +6,7 @@ To install, use:
 
 ```
 npm install honkit
+#npm install gitbook-plugin-toggle-summary
 npm install
 ```
 
@@ -21,3 +22,9 @@ or
 npm run serve
 ```
 
+{% method %}
+{% sample lang="1" %}
+Hey
+{% sample lang="2" %}
+You
+{% endmethod %}
