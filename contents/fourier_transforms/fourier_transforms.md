@@ -1,26 +1,57 @@
-<span style="color:red">Notes: </span>
-1. <span style="color:red"> Some of the images definitely need (a), (b), (c) labels. I was trying to get something that looked mostly right before finishing them up </span>
-2. <span style="color:red"> The video hops back and forth between sound examples. I think it's a good idea to have the examples, but I am not sure if it's best to hop back and forth.</span>
-
-    <span style="color:blue"> It's probably good not to switch contexts to frequently, but I think intermingling examples with theory can help to strengthen an understanding of both.</span>
-
-
-3. <span style="color:red"> I will embed the video, but I wasn't sure if we should put it at the top or the bottom.</span>
-
-    <span style="color:Blue"> Top please :) </span>
-
-4. <span style="color:red"> Still need to finishing licensing section at the bottom.</span>
-
+{% method %}
+{% sample lang="Blog" %}
+<p align="center">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/spUNpyF58BY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This video was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+{% sample lang="Print" %}
+{% endmethod %}
 
 # A Visual Interpretation of Fourier Transforms
 
 This right here is the visual you and I will build up to in this post:
 
-<span style="color:blue"> Insert some kind of "winding machine" clip. </span>
+{% method %}
+{% sample lang="Blog" %}
+<div style="text-align:center">
+<video style="width:70%;" controls loop>
+  <source src="res/motivation.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This video was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+{% sample lang="Print" %}
+<p align="center">
+    <img  src="res/com_1.png" style="width:70%" />
+</p>
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This image was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and <a href="https://github.com/leios"> James Schloss </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+{% endmethod %}
+
+<br>
 
 This represents the inner workings of an incredibly important tool for math, engineering, and most of science: The Fourier transform.
 While this post is aimed at being a friendly introduction, building up to a visual understanding that motivates the potentially-complicated-looking formula, my hope is that even those of you who are already somewhat familiar with Fourier Transforms will find it enriching to unpack what it is really doing.
-
 
 ## Fourier transform of sound waves
 
@@ -29,39 +60,119 @@ Let's begin with a classic example, decomposing frequencies in sound waves.
 Imagine you are listening to a pure A tone, which has the frequency of 440 beats per second.
 This means that if you were to measure the air pressure next to your ear over time, it would oscillate 440 times every second.
 
+{% method %}
+{% sample lang="Blog" %}
+<div style="text-align:center">
+<video style="width:70%; background-color: #fff;" poster="res/a440.png" controls loop>
+  <source src="res/a440.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This video was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+{% sample lang="Print" %}
 <p align="center">
     <img  src="res/a440.png" style="width:70%" />
 </p>
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This image was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and <a href="https://github.com/leios"> James Schloss </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+{% endmethod %}
+
+<br>
+
 
 If you were to take a lower tone, like a D, it might oscillate slower at (for example) 294 beats per second.
 Playing both sounds at the same time without any external stimuli, the resulting pressure vs time graph would also oscillate around the ambient air pressure with time, but it would look more complicated than a simple sine wave.
 Its deviation from the ambient air pressure at any point in time would be the sum of what it would be with a pure A and what it would be with a pure D, like so:
 
+{% method %}
+{% sample lang="Blog" %}
+<div style="text-align:center">
+<video style="width:70%;" poster="res/AD.png" controls loop>
+  <source src="res/AD.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This video was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+{% sample lang="Print" %}
 <p align="center">
     <img  src="res/AD.png" style="width:70%" />
 </p>
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            Here, we have drawn small white lines on the notes for A (bottom, yellow) and D (middle, pink) and shown that they create the final pressure vs time graph (top, green) when added together. 
+            When the two waves are increasing at the same time, the resulting waveform is high. Similarly, when the two waveforms are decreasing at the same time, we see that the resulting waveform is low.
+            Still at other points, the two waves cancel each other out.
+            All-in-all, the resulting waveform is not a pure sine wave, but instead something more complicated.
+            <br>
+            <br>
+            This image was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and <a href="https://github.com/leios"> James Schloss </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+{% endmethod %}
 
-<span style="color:blue"> I swapped the above image for the original, only because AD2.png wasn't showing for me.  I think the image AD2 was mostly good, but it takes a moment to parse.  That's probably more to do with what you had to work with from the original video still image.  Maybe a video clip corresponding to the video from 1:22 to 1:48 would work better, perhaps with the yellow highlighted parts cut out, using AD2 as a thumbnail.  </span>
-
-Here, we have drawn small white lines on the notes for A (bottom, yellow) and D (middle, pink) and shown that they create the final pressure vs time graph (top, green) when added together.
-When the two waves are increasing at the same time, the resulting waveform is high.
-Similarly, when the two waveforms are decreasing at the same time, we see that the resulting waveform is low.
-Still at other points, the two waves cancel each other out.
-All-in-all, the resulting waveform is not a pure sine wave, but instead something more complicated.
-If more notes are added, the waveform becomes even more complicated:
-<span style="color:blue"> (Make this paragraph an image caption) </span>
+<br>
 
 Similarly, if we were to play more pure frequencies at the same time, the resulting waveform would be a sum of these sine waves, but even more complicated.
 
+{% method %}
+{% sample lang="Blog" %}
+<div style="text-align:center">
+<video style="width:70%;" poster="res/DAFC.png" controls loop>
+  <source src="res/DAFC.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This video was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+{% sample lang="Print" %}
 <p align="center">
     <img  src="res/DAFC.png" style="width:70%" />
 </p>
-<span style="color:blue"> Maybe this should also be a short clip?  1:50 - 2:03 </span>
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>Click for caption</summary>
+        <span style="color:grey; font-size:0.8em">
+            Similar to the previous image, we have drawn a wite line at a particular point in time to show that the final pressure vs time graph (top, blue) is a sum of 4 different frequencies: D (pink), A (yellow), F (teal), and C (red).
+            If you were to record yourself with a microphone, you might find waveform that is similar to this final pressure vs time graph which could similarly be composed of a set of different frequencies.
+            <br>
+            <br>
+            This image was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and <a href="https://github.com/leios"> James Schloss </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+{% endmethod %}
 
-Similar to the previous image, we have drawn a wite line at a particular point in time to show that the final pressure vs time graph (top, blue) is a sum of 4 different frequencies: D (pink), A (yellow), F (teal), and C (red).
-If you were to record yourself with a microphone, you might find waveform that is similar to this final pressure vs time graph which could similarly be composed of a set of different frequencies.
-<span style="color:blue"> Make into an image caption </span>
-
+<br>
 
 A microphone recording any sound just picks up on the air pressure at many different points in time.
 It only "sees" the final sum.
@@ -71,7 +182,6 @@ Pretty interesting, right?
 Adding up those signals really mixes them all together.
 So pulling them back apart feels akin to unmixing multiple paint colors that have all been stirred up together.  Or as Kalid Azad [nicely phrased it](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/), "Given a smoothie, it finds the recipe."
 
-
 The general strategy will be to build for ourselves a mathematical machine that treats signals with a given frequency differently from how it treats other signals.  Moreover, it should be able to detect the presence of that frequency even if it's been mixed together with others, for example recognizing that the messy waveform above has a pure A440 hiding inside it.
 Writing down what this machine does as a formula will give us the Fourier transform.
 
@@ -80,19 +190,59 @@ Writing down what this machine does as a formula will give us the Fourier transf
 To start, let's draw a sine wave at 3 beats per second from 0 to 4.5 seconds:
 
 <p align="center">
-    <img  src="res/3ps.png" style="width:100%" />
+    <img  src="res/3ps.png" style="width:70%" />
 </p>
+
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This image was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and <a href="https://github.com/leios"> James Schloss </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+
+<br>
 
 This is similar to the A or D frequencies mentioned in the previous section.  If you were just given this graph, how could you recognize that it's oscillating at 3 beats per second?  What operation could you perform that takes in this graph and spits out the number 3?
 
-"That's a pretty dumb question," you might say, "just count the number of humps in a given second!"  Fair enough, that works, but that won't help us at all once the signal has been added to others.  So is there some _other_ operation you could perform that detects the specialness of the number 3 here, but which has some hope of still detectingi that number 3 after the signal has been added to others?
+"That's a pretty dumb question," you might say, "just count the number of humps in a given second!"  Fair enough, that works, but that won't help us at all once the signal has been added to others.  So is there some *other* operation you could perform that detects the specialness of the number 3 here, but which has some hope of still detectingi that number 3 after the signal has been added to others?
 
 To do this, we'll start by "wrapping it up" around a circle, like this.
 
+{% method %}
+{% sample lang="Blog" %}
+<div style="text-align:center">
+<video style="width:70%;" poster="res/windy_arrows.png" controls loop>
+  <source src="res/windy_arrows.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This video was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+
+{% sample lang="Print" %}
 <p align="center">
     <img  src="res/windy_arrows.png" style="width:70%" />
 </p>
-<p><span style="color:blue"> Let's make this a video clip </span></p>
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This image was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and <a href="https://github.com/leios"> James Schloss </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+{% endmethod %}
+
+<br>
 
 You can think of the wound up graph on the bottom as being drawn by a little vector rotating at a steady rate with time.  As it rotates, it's length is changing to match the height of the sine graph up top at the corresponding time.
 
@@ -108,21 +258,76 @@ This is important, there are 2 different frequencies at play.
 
 If we set the vector rotating faster or slower, changing the "winding frequency", the resulting shape it traces out would be something different.
 
+{% method %}
+{% sample lang="Blog" %}
+<div style="text-align:center">
+<video style="width:70%;" poster="res/3freq2.png" controls loop>
+  <source src="res/3freq2.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This video was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+
+{% sample lang="Print" %}
 <p align="center">
     <img  src="res/3freq2.png" style="width:70%" />
 </p>
-<p><span style="color:blue"> I actually think this image is probably fine if we remove the dotted lines completely.  It might be best as a thumbnail to a video clip. </span></p>
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This image was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and <a href="https://github.com/leios"> James Schloss </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+{% endmethod %}
 
+<br>
 
 The key intuition here is that we are wrapping the signal around a circle, and depending on how tightly we wind the sine wave, we can find different patterns.
-So what happens when when the winding frequency is _the same_ as the original signal's frequency?
+So what happens when when the winding frequency is *the same* as the original signal's frequency?
 When our little vector rotates around the circle at 3 cycles per second?
 Well, we get the following plot:
 
+{% method %}
+{% sample lang="Blog" %}
+<div style="text-align:center">
+<video style="width:70%;" poster="res/winding_match.png" controls loop>
+  <source src="res/winding_match.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This video was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+
+{% sample lang="Print" %}
 <p align="center">
     <img  src="res/winding_match.png" style="width:70%" />
 </p>
-<p><span style="color:blue"> Make this a thumbnail to a video clip. </span></p>
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This image was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and <a href="https://github.com/leios"> James Schloss </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+{% endmethod %}
+
+<br>
 
 Notice, the resulting curve it draws out is off-balance to the right.
 The rotating vector is always longer when it's pointing to the right, and shorter when it's pointed to the left, because the frequency with which its length changes is identical to the frequency with which it rotates around the circle.
@@ -130,7 +335,6 @@ The rotating vector is always longer when it's pointing to the right, and shorte
 
 Would we be able to use this information for our frequency unwinding machine?
 Well, we actually can!
-
 
 First, let's imagine that the pattern was made of something with some weight, like a metal wire.
 Now put a dot at the center of mass location, and as we change the winding frequency, the center of mass will kind of wobble about.
@@ -140,15 +344,43 @@ We'll revisit what we mean by "center of mass" here a bit further down, but for 
 In most cases, the center of mass stays relatively close to the origin, but when the winding frequency is the same as the frequency for our signal, the center of mass is unusually far to the right.
 To keep track of this effect, let's draw the x-coordinate for the center of mass as the winding frequency changes.
 
+{% method %}
+{% sample lang="Blog" %}
+<div style="text-align:center">
+<video style="width:70%;" poster="res/com_1.png" controls loop>
+  <source src="res/com_1.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This video was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+
+{% sample lang="Print" %}
 <p align="center">
     <img  src="res/com_1.png" style="width:70%" />
 </p>
-<p><span style="color:blue"> Outstanding image </span></p>
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>Click for caption</summary>
+        <span style="color:grey; font-size:0.8em">
+            Here, we have taken 5 separate snapshots of the sine wave wound around the circle for winding frequencies of 0.2, 1.5, 3, 4, and 5 cycles per second.
+            In each figure, we have plotted the center of mass as a red dot, and it is clear that the dot is furthest from the center of the plot with a winding frequency of 3 cycles per second.
+            Away from that winding frequency, the center of mass location seems to wobble around the center of the plot.
+            <br>
+            <br>
+            This image was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and <a href="https://github.com/leios"> James Schloss </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+{% endmethod %}
 
-Here, we have taken 5 separate snapshots of the sine wave wound around the circle for winding frequencies of 0.2, 1.5, 3, 4, and 5 cycles per second.
-In each figure, we have plotted the center of mass as a red dot, and it is clear that the dot is furthest from the center of the plot with a winding frequency of 3 cycles per second.
-Away from that winding frequency, the center of mass location seems to wobble around the center of the plot.
-<p><span style="color:blue"> Make into a caption </span></p>
+<br>
 
 There is one small caveat: the center of mass seems to be a maximum distance from the center of the plot at a winding frequency of 0 cycles per second.
 What gives?
@@ -159,6 +391,18 @@ If we centered the initial sine wave around 0, lettint it dip into negative valu
 <p align="center">
     <img  src="res/centered.png" style="width:70%" />
 </p>
+
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This image was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and <a href="https://github.com/leios"> James Schloss </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+
+<br>
+
 
 The motive for using purely positive sine waves as our starting examples in
 this post is that negative values are a little weirder to think about as you wind up the graph.
@@ -174,23 +418,75 @@ We could do the same thing and find a peak at 2 cycles per second, as shown here
     <img  src="res/2ps.png" style="width:70%" />
 </p>
 
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This image was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and <a href="https://github.com/leios"> James Schloss </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+
+<br>
+
+
 The most interesting aspect of this machine is that it will allow us to decompose any arbitrary signals into it's constituent waveforms.
 To show this, let's combine the 2 and 3 frequency waves and do the same operation: tracking the center of mass coordinate and look for peaks in the winding frequency plot.
 This is shown below:
 
+{% method %}
+{% sample lang="Blog" %}
+<div style="text-align:center">
+<video style="width:70%;" poster="res/full_machine.png" controls loop>
+  <source src="res/full_machine.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This video was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+
+{% sample lang="Print" %}
 <p align="center">
     <img  src="res/full_machine.png" style="width:70%" />
 </p>
-<p><span style="color:blue"> Add video clip </span></p>
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This image was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and <a href="https://github.com/leios"> James Schloss </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+{% endmethod %}
+
+<br>
 
 Here, we see 2 different frequencies at both 2 and 3 beats per second, which is exactly the same as the two "Almost Fourier Transformed" plots added together.
 Simply put, the sum of the two "Almost Fourier Transformed" signals is the same as the "Almost Fourier Transform" of the two summed together, as shown here:
 
 <p align="center">
-    <img  src="res/almost.png" style="width:100%" />
+    <img  src="res/almost.png" style="width:70%" />
 </p>
 
-The way a mathematician might phrase this is that our "Almost Fourier Transform" operation is _linear_.
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This image was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and <a href="https://github.com/leios"> James Schloss </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+
+<br>
+
+
+The way a mathematician might phrase this is that our "Almost Fourier Transform" operation is *linear*.
 The curious among you may want to pause for a moment to reflect on why this is true.
 It ultimately stems from the fact that the x-coordinate of the sum of two vectors is the sum of their x-coordinates.
 This, by the way, is why we had it track the x-coordinate of the center of mass of the graph, rather than tracking its distance from the origin.
@@ -207,14 +503,22 @@ Ideally, we would like to think of this signal in terms of frequencies, so we ne
 From there, we will the annoying high-pitched ringing sound as a spike on the far right of the plot, as shown below:
 
 <p align="center">
-    <img  src="res/sound_example.png" style="width:100%" />
+    <img  src="res/sound_example.png" style="width:70%" />
 </p>
-<p><span style="color:blue"> I think as long as the progression is entirely vertical, this image will work fine. </span></p>
+
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This image was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and <a href="https://github.com/leios"> James Schloss </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+
+<br>
 
 If we remove the spike by smooshing it out on the frequency plot, we will have a sound that is almost identical to the recording, but without the ringing.
 To go back to the original signal, we need to use another concept known as the inverse Fourier transform, and after applying this operation, we have effectively removed the high-pitched ringing noise from the signal.
-
-<span style="color:red">Note: this image needs a rework. I like that everything is on the same plot because it shows the concept for the full section in a single image, but maybe it's best to split it into two separate images and have the original signals faded behind the new ones?</span>
 
 So at this stage, we should get back to the heart of this post: what exactly is the mathematical formalism for a Fourier Transform?
 
@@ -230,14 +534,41 @@ Well, Euler's formula is why.
 
 Euler's formula famously tells us that if we were to take $$e^{i n}$$, where $$n$$ is some arbitrary number (like 2.0), and $$i$$ is the typical complex variable of $$\sqrt{-1}$$, we will find ourselves on the point we would get by walking counter-clockwise $$n$$ units along a circle of radius 1 in the complex plane, as shown below:
 
+{% method %}
+{% sample lang="Blog" %}
+<div style="text-align:center">
+<video style="width:70%;" poster="res/e2i.png" controls loop>
+  <source src="res/e2i.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This video was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+
+{% sample lang="Print" %}
 <p align="center">
     <img  src="res/e2i.png" style="width:50%" />
 </p>
-<p><span style="color:blue"> Make into a video </span></p>
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This image was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and <a href="https://github.com/leios"> James Schloss </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+
+{% endmethod %}
+
+<br>
 
 If you are curious, I've made two multiple videos explaining why this is true, a [quick one](https://youtu.be/v0YEaeIClKY) offering an explanation from the perspective of differential equations, a [longer one](https://youtu.be/mvmuCPvRoWQ) offering a connection to group theory, and a [longer one still](https://youtu.be/ZxYOEwM6Wbk) targeted at someone just seeing it for the first time.
-<p><span style="color:blue"> Once the scaffolding of the site is set up, replace these with links to the appropriate blog posts </span></p>
-
 
 Armed with Euler's formula, how might we describe rotating at a rate of $$f$$ cycles per second?
 Well, it would simply be:
@@ -268,10 +599,39 @@ $$
 
 Pictorially, it would look like this:
 
+{% method %}
+{% sample lang="Blog" %}
+<div style="text-align:center">
+<video style="width:70%;" poster="res/sum.png" controls loop>
+  <source src="res/sum.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This video was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+
+{% sample lang="Print" %}
 <p align="center">
     <img  src="res/sum.png" style="width:70%" />
 </p>
-<p><span style="color:blue"> Video option? </span></p>
+
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This image was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and <a href="https://github.com/leios"> James Schloss </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+{% endmethod %}
+
+<br>
 
 As we add more points, it becomes more accurate, and in the continuous limit, the sum becomes an integral:
 
@@ -280,19 +640,9 @@ $$
 $$
 
 Here, we still need to divide the equation based on the size of the time interval $$(t_2-t_1)$$.
-Though this might seem intimidating, the whole expression is really just finding the center of mass of the wound-up graph.
-
-
-Here it's worth adding some more clarity on what we mean by "center of mass".
-In the picture above, notice that that points are being sampled in a way that's evenly spaced across time, but this is not necessarily evenly spaced along the _length_ of the graph.
-In effect, if we're thinking of the graph as a wire, the density of that wire is constant with respect to time, as if the rotating vector drawing it is outputting a constant amount of mass per unit time. 
-But this implies the wire would be a little less dense in places where the graph's height changes rapidly.
-In principle, you could define a similar-but-distinct cousin of the Fourier transform by treating this "wire" with constant mass per unit of arc length, but the math would become less elegant.
-<span style="color:blue"> Is there a way for me to make this a footnote? </span>
-
+Though this might seem intimidating, the whole expression is really just finding the center of mass of the wound-up graph<sup id="a1">[[1]](#f1)</sup>.
 
 Great!  Step-by-step, we have built up this kind of complicated, but, let's face it, surprisingly small expression for the whole winding machine idea that I talked about.
-
 
 And now, there is only one final distinction to point out between this and the actual, honest-to-goodness Fourier transform.
 Namely, just don't divide out by the time interval.
@@ -308,14 +658,59 @@ What that means is that instead of looking at the center of mass, you would scal
 If the portion of the original graph you were using spanned three seconds, you would multiply the center of mass by three.
 If it was spanning six seconds, you would multiply the center of mass by six.
 
-<p><span style="color:blue"> Insert video clip </span></p>
+{% method %}
+{% sample lang="Blog" %}
+<div style="text-align:center">
+<video style="width:70%;" poster="res/6seconds.png" controls loop>
+  <source src="res/6seconds.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This video was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+
+{% sample lang="Print" %}
+<p align="center">
+    <img  src="res/6seconds.png" style="width:70%" />
+</p>
+
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This image was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and <a href="https://github.com/leios"> James Schloss </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+{% endmethod %}
+
+<br>
 
 Physically, this has the effect that when a certain frequency persists for a long time, then the magnitude of the Fourier transform at that frequency is scaled up more and more.
 
 For example, in the image below, we have a pure frequency of two beats per second, and it's being wound up at two cycles per second.
 In that case, no matter how long the duration of our signal, the center of mass stays roughly in the same spot, right?  It's just tracing out the same shape.
 
-<p><span style="color:blue"> Insert image </span></p>
+<p align="center">
+    <img  src="res/to_infinity1.png" style="width:70%" />
+</p>
+
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This image was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and <a href="https://github.com/leios"> James Schloss </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+
+<br>
 
 
 But what makes the honest-to-goodness Fourier Transform different from our "Almost Fourier Transform" is that the longer the signal persists, the larger the value of the Fourier transform, at that frequency.
@@ -323,7 +718,39 @@ But what makes the honest-to-goodness Fourier Transform different from our "Almo
 
 For other winding frequencies, though, even even ones just barely different from 2, the effect of increasing the duration is canceled out by the fact that for longer time intervals, you're giving the wound up graph more of a chance to balance itself around the circle.
 
-<p><span style="color:blue"> Insert image and/or video </span></p>
+{% method %}
+{% sample lang="Blog" %}
+<div style="text-align:center">
+<video style="width:70%;" poster="res/to_infinity2.png" controls loop>
+  <source src="res/to_infinity.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This video was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+
+{% sample lang="Print" %}
+<p align="center">
+    <img  src="res/to_infinity2.png" style="width:70%" />
+</p>
+
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This image was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and <a href="https://github.com/leios"> James Schloss </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+{% endmethod %}
+
+<br>
 
 
 ## Summary
@@ -333,14 +760,39 @@ That is...a lot of different moving parts, so let's step back and summarize what
 The Fourier transform of an intensity vs. time function, like $$g(t)$$, is a new function, which doesn't have time as an input, but instead takes in a frequency, what I've been calling "the winding frequency."
 In terms of notation, by the way, the common convention is to call this new function $$\hat g(f)$$ with a little circumflex on top of it.
 
-<p><span style="color:blue"> Insert image showing example graph of $$g(t)$$ and $$\hat g(t)$$, something like the top half of 17:51 </span></p>
+<p align="center">
+    <img  src="res/imag_too.png" style="width:70%" />
+</p>
+
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This image was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and <a href="https://github.com/leios"> James Schloss </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+
+<br>
 
 The output of this new function is a complex number, some point in the 2D plane, that corresponds to the strength of a given frequency in the original signal.  The plot that I've been graphing for the Fourier transform is just the real component of that output, the x-coordinate.
 
 But you could also graph the imaginary component separately, if you wanted a fuller description.
 
-<p><span style="color:blue"> Insert image, say something like 18:01 </span></p>
+<p align="center">
+    <img  src="res/conclusion.png" style="width:70%" />
+</p>
 
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This image was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and <a href="https://github.com/leios"> James Schloss </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+
+<br>
 
 And all of this is being encapsulated inside that formula that we built up.
 
@@ -366,28 +818,60 @@ $$
 Concretely, what that means is that you consider this expression for all possible finite time intervals, and you just ask, "What is its limit as that time interval grows to $$\infty$$?"
 
 
-<p><span style="color:blue"> Insert video clip, say the one starting at 18:45 </span></p>
+{% method %}
+{% sample lang="Blog" %}
+<div style="text-align:center">
+<video style="width:70%;" poster="res/scaling.png" controls loop>
+  <source src="res/scaling.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This video was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+
+{% sample lang="Print" %}
+<p align="center">
+    <img  src="res/scaling.png" style="width:70%" />
+</p>
+
+<div align="center" style="line-height: .8em;">
+    <details closed>
+        <summary>License</summary>
+        <span style="color:grey; font-size:0.8em">
+            This image was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and <a href="https://github.com/leios"> James Schloss </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
+        </span>
+    </details>
+</div>
+{% endmethod %}
+
+<br>
 
 
 There is a lot more to say about this, but this will wrap up the discussion for now.
 Please let us know if there's anything else you would like to discuss!
 
+### Notes
+<b id="f1">1</b> Here it's worth adding some more clarity on what we mean by "center of mass".
+In the picture above, notice that that points are being sampled in a way that's evenly spaced across time, but this is not necessarily evenly spaced along the *length* of the graph.
+In effect, if we're thinking of the graph as a wire, the density of that wire is constant with respect to time, as if the rotating vector drawing it is outputting a constant amount of mass per unit time. 
+But this implies the wire would be a little less dense in places where the graph's height changes rapidly.
+In principle, you could define a similar-but-distinct cousin of the Fourier transform by treating this "wire" with constant mass per unit of arc length, but the math would become less elegant.
+[↩](#a1)
 
-<script>
-MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-</script>
-
-
-## License
+## Licensing
 
 ##### Text
 
 The text is based on a video by [Grant Sanderson](https://www.3blue1brown.com/about), adapted and expanded to the blog format by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
-##### Images/Graphics
+[<p align="center"><img src="../cc/CC-BY-NC-SA.svg" style="width:15%"/></p>](https://creativecommons.org/licenses/by-sa/4.0/)
 
-<p><span style="color:blue"> Image licenses should be attached to the relevant images.  </span></p>
-
-- The image "[A 440](res/a440.png)" was created by [Grant Sanderson](https://github.com/3b1b) and [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0)](https://creativecommons.org/licenses/by-nc-sa/2.0/).
-
-[<p align="center"><img src="../cc/CC-BY-SA_icon.svg" /></p>](https://creativecommons.org/licenses/by-sa/4.0/)
+<script>
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+</script>
