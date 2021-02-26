@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "gitbook-plugin-api-language-selector": "git+https://github.com/algorithm-archivists/gitbook-plugin-api-language-selector.git",
     "gitbook-plugin-bibtex-cite": "^1.1.0",
     "gitbook-plugin-mathjax": "git+https://github.com/algorithm-archivists/plugin-mathjax.git",
     "gitbook-plugin-wordcount": "^0.0.1",

@@ -1,1 +1,4 @@
 *.bak
+tmp/*
+_book/*
+node_modules/*
