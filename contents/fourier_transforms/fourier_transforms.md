@@ -1,3 +1,7 @@
+<style>
+	video { background: black url('<?php the_field('video_icon'); ?>') 50% 50% / cover no-repeat; }
+</style>
+
 {% method %}
 {% sample lang="Blog" %}
 <p align="center">
@@ -63,7 +67,7 @@ This means that if you were to measure the air pressure next to your ear over ti
 {% method %}
 {% sample lang="Blog" %}
 <div style="text-align:center">
-<video style="width:70%; background-color: #fff;" poster="res/a440.png" controls loop>
+<video style="width:70%; background-color: #fff;" poster="res/a440_1080.png" controls loop>
   <source src="res/a440.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
@@ -101,7 +105,7 @@ Its deviation from the ambient air pressure at any point in time would be the su
 {% method %}
 {% sample lang="Blog" %}
 <div style="text-align:center">
-<video style="width:70%;" poster="res/AD.png" controls loop>
+<video style="width:70%;" poster="res/AD_1080.png" controls loop>
   <source src="res/AD.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
@@ -141,7 +145,7 @@ Similarly, if we were to play more pure frequencies at the same time, the result
 {% method %}
 {% sample lang="Blog" %}
 <div style="text-align:center">
-<video style="width:70%;" poster="res/DAFC.png" controls loop>
+<video style="width:70%;" poster="res/DAFC_1080.png" controls loop>
   <source src="res/DAFC.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
@@ -190,7 +194,7 @@ Writing down what this machine does as a formula will give us the Fourier transf
 To start, let's draw a sine wave at 3 beats per second from 0 to 4.5 seconds:
 
 <p align="center">
-    <img  src="res/3ps.png" style="width:70%" />
+    <img  src="res/3ps.png" style="width:100%" />
 </p>
 
 <div align="center" style="line-height: .8em;">
@@ -261,7 +265,7 @@ If we set the vector rotating faster or slower, changing the "winding frequency"
 {% method %}
 {% sample lang="Blog" %}
 <div style="text-align:center">
-<video style="width:70%;" poster="res/3freq2.png" controls loop>
+<video style="width:70%;" poster="res/3freq2_1080.png" controls loop>
   <source src="res/3freq2.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
@@ -347,7 +351,7 @@ To keep track of this effect, let's draw the x-coordinate for the center of mass
 {% method %}
 {% sample lang="Blog" %}
 <div style="text-align:center">
-<video style="width:70%;" poster="res/com_1.png" controls loop>
+<video style="width:70%;" poster="res/com_1_1080.png" controls loop>
   <source src="res/com_1.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
@@ -437,7 +441,7 @@ This is shown below:
 {% method %}
 {% sample lang="Blog" %}
 <div style="text-align:center">
-<video style="width:70%;" poster="res/full_machine.png" controls loop>
+<video style="width:70%;" poster="res/full_machine_1080.png" controls loop>
   <source src="res/full_machine.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
@@ -537,7 +541,7 @@ Euler's formula famously tells us that if we were to take $$e^{i n}$$, where $$n
 {% method %}
 {% sample lang="Blog" %}
 <div style="text-align:center">
-<video style="width:70%;" poster="res/e2i.png" controls loop>
+<video style="width:70%;" poster="res/e2i_1080.png" controls loop>
   <source src="res/e2i.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
@@ -761,7 +765,7 @@ The Fourier transform of an intensity vs. time function, like $$g(t)$$, is a new
 In terms of notation, by the way, the common convention is to call this new function $$\hat g(f)$$ with a little circumflex on top of it.
 
 <p align="center">
-    <img  src="res/imag_too.png" style="width:70%" />
+    <img  src="res/imag_too.png" style="width:50%" />
 </p>
 
 <div align="center" style="line-height: .8em;">
