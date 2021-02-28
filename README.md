@@ -20,4 +20,4 @@ There are a few specific questions we would like to ask about this content:
 2. Is the print mode useful to you? Could you see this style of content being useful in a classroom or as a leisurely read over the weekend?
 3. What about a physically printed version of several 3Blue1Brown series?
 4. Could you see yourself or others you know being willing to help with a project like this?
-5. One of the motives here is to have a place where future experimental projects related to videos can live, for example embeding quizzes or spaced repetition memeory.  Can you think of other such supplemental features which could complement the content?
+5. One of the motives here is to have a place where future experimental projects related to videos can live, for example embedding quizzes or spaced repetition memory. Can you think of other such supplemental features which could complement the content?
