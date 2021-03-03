@@ -59,7 +59,7 @@ else
     rm -rf ./"${DOCS_REPO_NAME}"/*
     cp -a "${BOOK_BUILD_DIR}"/* ./"${DOCS_REPO_NAME}"
     pushd ./"${DOCS_REPO_NAME}"
-    echo "www.algorithm-archive.org" > CNAME
+    #echo "www.algorithm-archive.org" > CNAME
     echo "${bold}Adding changes...${normal}"
     git add --all
     echo "${bold}Committing...${normal}"
