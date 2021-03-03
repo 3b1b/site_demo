@@ -10,6 +10,7 @@ set -o errexit
 DOCS_BRANCH_NAME=gh-pages
 DOCS_REPO_NAME=site_demo
 DOCS_REPO_OWNER=3b1b
+>>>>>>> e25bed2 (adding attempt at github ci)
 
 BOOK_BUILD_DIR=_book
 
