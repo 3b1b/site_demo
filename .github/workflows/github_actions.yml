@@ -38,7 +38,7 @@ jobs:
             exit 1
           fi
 
-      - name: Finishing build and pushing to algorithm-archivists.github.io
+      - name: Finishing build and pushing to gh-pages
         if: github.event.pull_request.merged == true
         run: |
           bash tools/deploy/update_site.bash $GH_TOKEN
