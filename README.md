@@ -1,7 +1,5 @@
 # Introduction
 
-SMALL CHANGE
-
 This is a demo site for Bloggification of all 3Blue1Brown content.
 Eventually, all videos will be incorporated into this project, but for now we have a single post available for [Fourier transforms](contents/fourier_transforms/fourier_transforms.md).
 
