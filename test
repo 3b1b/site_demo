@@ -1,0 +1,46 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Flip between image and video</title>
+<script>
+
+    var button_beg = '<button id="button" onclick="switchmode()">', button_end =
+ '</button>';
+    var video_button = 'Video', image_button = 'Image';
+    function switchmode() {
+        var div = document.getElementById( "show_image" );
+        var show_video = document.getElementById( "show_video" );
+        if ( div.style.display !== "none" ) {
+            div.style.display = "block";
+            button = image_button;
+            show_video.innerHTML = button_beg + button + button_end;
+        } else {
+            div.style.display = "block";
+            button = video_button;
+            show_video.innerHTML = button_beg + button + button_end;
+        }
+    }
+    function setup_button( status ) {
+        if ( status == 'show_image' ) {
+            button = image_button;
+        } else {
+            button = video_button;
+        }
+        var show_video = document.getElementById( "show_video" );
+        showhide.innerHTML = button_beg + button + button_end;
+    }
+    window.onload = function () {
+        setup_button( 'Image' );
+        switchmode(); // if setup_button is set to 'show' comment this line
+    }
+</script>
+</head>
+<body>
+    <div id="show_image">
+        <p>Put Video here</p>
+    </div>
+    <div id="show_video">
+        <p>Put Image Here</p>
+    </div>
+</body>
+</html>
