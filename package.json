@@ -5,7 +5,6 @@
     "gitbook-plugin-mathjax": "git+https://github.com/algorithm-archivists/plugin-mathjax.git",
     "gitbook-plugin-toggle-chapters": "0.0.3",
     "gitbook-plugin-toggle-summary": "^1.0.0",
-    "gitbook-plugin-api-language-selector": "git+https://github.com/algorithm-archivists/gitbook-plugin-api-language-selector.git",
     "gitbook-plugin-wordcount": "^0.0.1",
     "honkit": "^3.6.16"
   },

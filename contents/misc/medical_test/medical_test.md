@@ -1,0 +1,3 @@
+# The medical test paradox: Can redesigning Bayes rule help?
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lG4VkPoG3ko" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
