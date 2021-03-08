@@ -42,7 +42,7 @@ jobs:
       - name: Finishing build and pushing to gh-pages
         if: github.event.pull_request.merged == true
         run: |
-          bash tools/deploy/update_site.bash $GH_TOKEN
+          bash tools/deploy/update_site.bash $GH_BLOG_TOKEN
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_BLOG_TOKEN: ${{ secrets.GH_BLOG_TOKEN }}
           TERM: xterm
