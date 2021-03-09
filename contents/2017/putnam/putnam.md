@@ -249,7 +249,7 @@ So only one of these 8 equally likely outcomes gives a tetrahedron containing th
 Isn't that elegant?
 
 This is a valid solution, but admittedly the way I've stated it so far rests on some visual intuition.
-I've left a link in the description to a slightly more formal write-up of this same solution in the language of linear algebra if you're curious {{ "LA_hardest_problem" | cite }}.
+I've left a link in the description to a slightly more formal write-up of this same solution in the language of linear algebra if you're curious {{ "LA_putnam" | cite }}.
 This is common in math, where having the key insight and understanding is one thing, but having the relevant background to articulate this understanding more formally is almost a separate muscle entirely, one which undergraduate math students spend much of their time building up.
 
 Lesson Now the main takeaway here is not the solution itself, but how you might find the key insight
