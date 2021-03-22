@@ -1,5 +1,6 @@
 {
   "honkit": ">= 3.0.0",
+  "title": "3Blue1Brown Blog",
   "root": "./",
   "plugins": [
     "api-language-selector",
