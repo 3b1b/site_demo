@@ -3,7 +3,6 @@
   "title": "3Blue1Brown Blog",
   "root": "./",
   "plugins": [
-    "api-language-selector",
     "mathjax@https://github.com/algorithm-archivists/plugin-mathjax",
     "bibtex-cite",
     "toggle-summary",

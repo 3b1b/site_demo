@@ -8,11 +8,10 @@ function switch_to(div_old, div_new)
 </script>
 </html>
 
-{% method %}
-{% sample lang="Blog" %}
 <p id="demo2" align="center">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/spUNpyF58BY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
+
 <div align="center" style="line-height: .8em;">
     <details closed>
         <summary>License</summary>
@@ -21,19 +20,13 @@ function switch_to(div_old, div_new)
         </span>
     </details>
 </div>
-{% sample lang="Print" %}
-{% endmethod %}
 
 # A Visual Interpretation of Fourier Transforms
 
 This right here is the visual you and I will build up to in this post:
 
-{% method %}
-{% sample lang="Blog" %}
 <a href="#" onClick="switch_to('1v','1i')">Image</a> |
 <a href="#" onClick="switch_to('1i','1v')">Video</a>
-{% sample lang="Print" %}
-{% endmethod %}
 
 <div style="display:none; text-align:center" id="1v">
     <video style="width:100%;" controls>
@@ -73,12 +66,8 @@ Let's begin with a classic example, decomposing frequencies in sound waves.
 Imagine you are listening to a pure A tone, which has the frequency of 440 beats per second.
 This means that if you were to measure the air pressure next to your ear over time, it would oscillate 440 times every second.
 
-{% method %}
-{% sample lang="Blog" %}
 <a href="#" onClick="switch_to('2v','2i')">Image</a> |
 <a href="#" onClick="switch_to('2i','2v')">Video</a>
-{% sample lang="Print" %}
-{% endmethod %}
 
 <div style="text-align:center; display:none" id="2v">
     <video style="width:100%" controls>
@@ -112,12 +101,8 @@ If you were to take a lower tone, like a D, it might oscillate slower at (for ex
 Playing both sounds at the same time without any external stimuli, the resulting pressure vs time graph would also oscillate around the ambient air pressure with time, but it would look more complicated than a simple sine wave.
 Its deviation from the ambient air pressure at any point in time would be the sum of what it would be with a pure A and what it would be with a pure D, like so:
 
-{% method %}
-{% sample lang="Blog" %}
 <a href="#" onClick="switch_to('3v','3i')">Image </a> |
 <a href="#" onClick="switch_to('3i','3v')">Video</a>
-{% sample lang="Print" %}
-{% endmethod %}
 
 <div style="text-align:center; display:none" id="3v">
     <video style="width:100%;" controls>
@@ -155,12 +140,8 @@ Its deviation from the ambient air pressure at any point in time would be the su
 
 Similarly, if we were to play more pure frequencies at the same time, the resulting waveform would be a sum of these sine waves, but even more complicated.
 
-{% method %}
-{% sample lang="Blog" %}
 <a href="#" onClick="switch_to('4v','4i')">Image </a> |
 <a href="#" onClick="switch_to('4i','4v')">Video</a>
-{% sample lang="Print" %}
-{% endmethod %}
 
 <div style="text-align:center; display:none" id="4v">
     <video style="width:100%;" controls>
@@ -230,12 +211,8 @@ This is similar to the A or D frequencies mentioned in the previous section.  If
 
 To do this, we'll start by "wrapping it up" around a circle, like this.
 
-{% method %}
-{% sample lang="Blog" %}
 <a href="#" onClick="switch_to('5v','5i')">Image</a> |
 <a href="#" onClick="switch_to('5i','5v')">Video</a>
-{% sample lang="Print" %}
-{% endmethod %}
 
 <div style="text-align:center;display:none" id="5v">
     <video style="width:100%;" controls>
@@ -280,12 +257,8 @@ This is important, there are 2 different frequencies at play.
 
 If we set the vector rotating faster or slower, changing the "winding frequency", the resulting shape it traces out would be something different.
 
-{% method %}
-{% sample lang="Blog" %}
 <a href="#" onClick="switch_to('6v','6i')">Image</a> |
 <a href="#" onClick="switch_to('6i','6v')">Video</a>
-{% sample lang="Print" %}
-{% endmethod %}
 
 <div style="text-align:center; display:none" id="6v">
     <video style="width:100%;" controls>
@@ -319,12 +292,8 @@ So what happens when when the winding frequency is *the same* as the original si
 When our little vector rotates around the circle at 3 cycles per second?
 Well, we get the following plot:
 
-{% method %}
-{% sample lang="Blog" %}
 <a href="#" onClick="switch_to('7v','7i')">Image</a> |
 <a href="#" onClick="switch_to('7i','7v')">Video</a>
-{% sample lang="Print" %}
-{% endmethod %}
 
 <div style="text-align:center;display:none" id="7v">
     <video style="width:100%;" controls>
@@ -368,12 +337,8 @@ We'll revisit what we mean by "center of mass" here a bit further down, but for 
 In most cases, the center of mass stays relatively close to the origin, but when the winding frequency is the same as the frequency for our signal, the center of mass is unusually far to the right.
 To keep track of this effect, let's draw the x-coordinate for the center of mass as the winding frequency changes.
 
-{% method %}
-{% sample lang="Blog" %}
 <a href="#" onClick="switch_to('8v','8i')">Image</a> |
 <a href="#" onClick="switch_to('8i','8v')">Video</a>
-{% sample lang="Print" %}
-{% endmethod %}
 
 <div style="text-align:center; display:none" id="8v">
     <video style="width:100%;" controls>
@@ -458,12 +423,8 @@ The most interesting aspect of this machine is that it will allow us to decompos
 To show this, let's combine the 2 and 3 frequency waves and do the same operation: tracking the center of mass coordinate and look for peaks in the winding frequency plot.
 This is shown below:
 
-{% method %}
-{% sample lang="Blog" %}
 <a href="#" onClick="switch_to('9v','9i')">Image</a> |
 <a href="#" onClick="switch_to('9i','9v')">Video</a>
-{% sample lang="Print" %}
-{% endmethod %}
 
 <div style="text-align:center; display:none" id="9v">
     <video style="width:100%;" controls>
@@ -560,12 +521,8 @@ Well, Euler's formula is why.
 
 Euler's formula famously tells us that if we were to take $$e^{i n}$$, where $$n$$ is some arbitrary number (like 2.0), and $$i$$ is the typical complex variable of $$\sqrt{-1}$$, we will find ourselves on the point we would get by walking counter-clockwise $$n$$ units along a circle of radius 1 in the complex plane, as shown below:
 
-{% method %}
-{% sample lang="Blog" %}
 <a href="#" onClick="switch_to('10v','10i')">Image</a> |
 <a href="#" onClick="switch_to('10i','10v')">Video</a>
-{% sample lang="Print" %}
-{% endmethod %}
 
 <div style="text-align:center; display:none" id="10v">
     <video style="width:100%;" controls>
@@ -626,12 +583,8 @@ $$
 
 Pictorially, it would look like this:
 
-{% method %}
-{% sample lang="Blog" %}
 <a href="#" onClick="switch_to('11v','11i')">Image</a> |
 <a href="#" onClick="switch_to('11i','11v')">Video</a>
-{% sample lang="Print" %}
-{% endmethod %}
 
 <div style="text-align:center; display:none" id="11v">
     <video style="width:100%;" controls>
@@ -686,12 +639,8 @@ What that means is that instead of looking at the center of mass, you would scal
 If the portion of the original graph you were using spanned three seconds, you would multiply the center of mass by three.
 If it was spanning six seconds, you would multiply the center of mass by six.
 
-{% method %}
-{% sample lang="Blog" %}
 <a href="#" onClick="switch_to('12v','12i')">Image</a> |
 <a href="#" onClick="switch_to('12i','12v')">Video</a>
-{% sample lang="Print" %}
-{% endmethod %}
 
 <div style="text-align:center; display:none" id="12v">
     <video style="width:100%;" controls>
@@ -747,12 +696,8 @@ But what makes the honest-to-goodness Fourier Transform different from our "Almo
 
 For other winding frequencies, though, even even ones just barely different from 2, the effect of increasing the duration is canceled out by the fact that for longer time intervals, you're giving the wound up graph more of a chance to balance itself around the circle.
 
-{% method %}
-{% sample lang="Blog" %}
 <a href="#" onClick="switch_to('13v','13i')">Image</a> |
 <a href="#" onClick="switch_to('13i','13v')">Video</a>
-{% sample lang="Print" %}
-{% endmethod %}
 
 <div style="text-align:center; display:none" id="13v">
     <video style="width:100%;" controls>
@@ -847,13 +792,8 @@ $$
 
 Concretely, what that means is that you consider this expression for all possible finite time intervals, and you just ask, "What is its limit as that time interval grows to $$\infty$$?"
 
-{% method %}
-{% sample lang="Blog" %}
 <a href="#" onClick="switch_to('14v','14i')">Image</a> |
 <a href="#" onClick="switch_to('14i','14v')">Video</a>
-{% sample lang="Print" %}
-{% endmethod %}
-
 
 <div style="text-align:center;display:none" id="14v">
     <video style="width:100%;" controls>
@@ -900,7 +840,7 @@ In principle, you could define a similar-but-distinct cousin of the Fourier tran
 
 The text is based on a video by [Grant Sanderson](https://www.3blue1brown.com/about), adapted and expanded to the blog format by [James Schloss](https://github.com/leios) and is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/legalcode).
 
-[<p align="center"><img src="../cc/CC-BY-NC-SA.svg" style="width:15%"/></p>](https://creativecommons.org/licenses/by-sa/4.0/)
+[<p align="center"><img src="../../cc/CC-BY-NC-SA.svg" style="width:15%"/></p>](https://creativecommons.org/licenses/by-sa/4.0/)
 
 <script>
 MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
