@@ -6,6 +6,7 @@
     "api-language-selector",
     "mathjax@https://github.com/algorithm-archivists/plugin-mathjax",
     "bibtex-cite",
+    "toggle-summary",
     "wordcount"
   ]
 }
