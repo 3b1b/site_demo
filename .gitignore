@@ -2,3 +2,5 @@
 tmp/*
 _book/*
 node_modules/*
+*.webm
+*.blend*
