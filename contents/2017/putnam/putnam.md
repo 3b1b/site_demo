@@ -6,10 +6,11 @@
 
 </div>
 
-Do you guys know about the Putnam?
-It's a math competition for undergraduate students.
-It's 6 hours long and consists of 12 questions, broken up into two different 3-hour sessions.
-With each question being scored on a 1-10 scale, the highest possible score is 120.
+## The problem
+
+There's a famous math competition for undergraduate students known as the Putnam.
+It's 6 hours long and consists of 12 questions, broken up into two different 3-hour sessions over two days.
+Each question being scored on a 1-10 scale, so the highest possible score is 120.
 And yet, despite the fact that the only students taking it each year are those who are clearly already pretty into math, given that they opt into such a test, the median score tends to be around 1 or 2.
 
 It's a hard test.
@@ -37,11 +38,13 @@ That is, this is a story about the problem-solving process, moreso than the part
 
 Here's the question:
 
-<p></p>
-
-<p align="center">
-    <img  src="res/putnam_question.png" style="width:70%" />
-</p>
+<p style="padding-left: 30px; padding-right: 30px; text-align: left"><b>
+Four points are chosen at random on the surface of a
+sphere. What is the probability that the center of the
+sphere lies inside the tetrahedron whose vertices are at
+the four points? (It is understood that each point is independently chosen relative to a uniform distribution on
+the sphere.)
+</b></p>
 
 <p align="center">
     <img  src="res/2sphere.png" style="width:100%" />
@@ -58,32 +61,15 @@ Here's the question:
 
 <p></p>
 
-<span style="color:blue"> [Instead of an animation, show 3 successive images.  One showing four random points on the sphere, one showing them connected to make a tetrahedron, and one contrasting whether that tetrahedron contains teh center or not.  That last one can have an animation option, and given that it might require some light image editing to show two cases side-by-side, we can leave a note to ourselves that it's a TBD for phase 2, and just have a short animation clip in it's place for now, some subset of res/problem.mp4]</span>
+Take a moment to digest the question. You might start thinking about which of these tetrahedra contain the sphere's center, which ones don't, and how you might systematically distinguish the two.
 
-<span style="color:red"> [Not sure what the 3rd image would be, do we want 2 balls, one that doesn't contain the sphere's center and one that does? The dot disappears when the center is covered] </span>
-
-Take a moment to kind of digest the question. You might start thinking about which of these tetrahedra contain the sphere's center, which ones don't, and how you might systematically distinguish the two.
 How do you approach a problem like this, where do you even start?
-Well, it's often a good idea to think about simpler cases, so let's bring things down into 2 dimensions.
+Well, it's often a good idea to think about simpler cases, so let's bring things down into two dimensions.
+
+## The two-dimensional case
 
 Suppose you choose three random points on a circle.
 It's always helpful to name things, so let's call these fellows P1, P2, and P3.
-
-<p align="center">
-    <img  src="res/2D1.png" style="width:100%" />
-</p>
-
-<div align="center" style="line-height: .8em;">
-    <details closed>
-        <summary>License</summary>
-        <span style="color:grey; font-size:0.8em">
-            This image was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
-        </span>
-    </details>
-</div>
-
-<p></p>
-
 What's the probability that the triangle formed by these points contains the center of the circle?
 
 <p align="center">
@@ -101,29 +87,9 @@ What's the probability that the triangle formed by these points contains the cen
 
 <p></p>
 
-It's certainly easier to visualize now, but it's still a hard question.
-
 So again, you ask yourself if there's a way to simplify what's going on.
 We still need a foothold, something to build up from.
 Maybe you imagine fixing P1 and P2 in place, only letting P3 vary.
-
-<div style="text-align:center">
-<video style="width:100%;" controls loop>
-  <source src="res/2d_1.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-</div>
-<div align="center" style="line-height: .8em;">
-    <details closed>
-        <summary>License</summary>
-        <span style="color:grey; font-size:0.8em">
-            This video was created by <a href="https://github.com/3b1b"> Grant Sanderson </a> and is licensed under the <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/"> Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (CC BY-NC-SA 2.0) </a>.
-        </span>
-    </details>
-</div>
-
-<p></p>
-
 In doing this, you might notice that there's special region, a certain arc, where when P3 is in that arc, the triangle contains the circle's center.
 
 <div style="text-align:center">
@@ -143,13 +109,9 @@ Your browser does not support the video tag.
 
 <p></p>
 
-<span style="color:blue"> [Animation, from section 2:34 to 2:43 (roughtly).  In phase 2, this should be a still image better labeling the arc, and showing multiple locations for P3]</span>
-
 Specifically, if you draw a lines from P1 and P2 through the center, these lines divide the circle into 4 different arcs.
 If P3 happens to be in the arc opposite P1 and P2, the triangle will contain the center.
 Otherwise, you're out of luck.
-
-It's certainly easier to visualize now, but it's still a hard question.
 
 <p align="center">
     <img  src="res/arcs.png" style="width:100%" />
@@ -166,11 +128,10 @@ It's certainly easier to visualize now, but it's still a hard question.
 
 <p></p>
 
-<span style="color:blue"> [Image showing the four arcs, e.g. from 2:50. Maybe insert four iamges, showing P3 in all four possible arcs.] </span>
-
+It's certainly easier to visualize now, but it's still a hard question.
 If we're assuming all points of the circle are equally likely, what's the probability that P3 lands in that arc?
-
 It's the length of that arc divided by the full circumference of the circle; the proportion of the circle that this arc makes up.
+
 What is that proportion? This depends on the first two points.
 If they are 90 degrees apart from each other, for example, the relevant arc is 1/4 of the circle.
 
@@ -264,6 +225,8 @@ Your browser does not support the video tag.
 
 <p></p>
 
+## The three-dimensional case
+
 Great! Can we extend this to the 3d case? If you imagine 3 of your 4 points fixed in place, which points of the sphere can that 4th point be on so that our tetrahedron contains the sphere's center?
 As before, let's draw some lines from each of our first 3 points through the center of the sphere.
 
@@ -317,12 +280,12 @@ Our tetrahedron will only contain the center of the sphere if the fourth point i
 
 <p></p>
 
-<span style="color:blue"> [Insert images showing some examples of that fourth point location]</span>
-
 Unlike the 2d case, it's rather difficult to think about the average size of this section as we let our initial 3 points vary.
 Those of you with some multivariable calculus under your belt might think to try a surface integral.
 And by all means, pull out some paper and give it a try, but it's not easy.
 And of course it should be difficult, this is the 6th problem on a Putnam!
+
+## The shift in perspective
 
 But let's back up to the 2d case, and contemplate if there's a different way to think about it.
 This answer we got, 1/4, is suspiciously clean and raises the question of what that 4 represents.
@@ -384,7 +347,7 @@ We'll still think about P3 as just being a random point on the circle, but imagi
 
 <p></p>
 
-Because you see, once the two lines and a random point have been chosen, there are four possibilities for where P1 and P2 end up, based on the coin flips, each one of which is equally likely.
+You see, once the two lines and a random point have been chosen, there are four possibilities for where P1 and P2 end up, based on the coin flips, each one of which is equally likely.
 But one and only one of those outcomes leaves P1 and P2 on the opposite side of the circle as P3, with the triangle they form containing the center.
 So no matter what those two lines and P3 turned out to be, it's always a 1/4 chance that the coin flips will leave us with a triangle containing the center.
 
@@ -404,6 +367,8 @@ So no matter what those two lines and P3 turned out to be, it's always a 1/4 cha
 
 That's very subtle. Just by reframing how we think of the random process for choosing these points, the answer 1/4 popped in a different way from before.
 And importantly, this style of argument generalizes seamlessly to 3 dimensions.
+
+<h2>Applying the shift to three dimensions </h2>
 
 Again, instead of starting off by picking 4 random points, imagine choosing 3 random lines through the center, and then a random point for P4.
 
