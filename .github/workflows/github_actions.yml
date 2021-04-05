@@ -30,7 +30,6 @@ jobs:
       - name: Building book
         run: |
           npm run build
-
       - name: Checking build
         run: |
           book_check_file="_book/index.html"
@@ -38,7 +37,6 @@ jobs:
             echo "${book_check_file} not found"
             exit 1
           fi
-
       - name: Finishing build and pushing to gh-pages
         if: github.event.pull_request.merged == true
         run: |
